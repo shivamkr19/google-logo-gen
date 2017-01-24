@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Google like Logo Generator</title>
+	<style type="text/css">
+		html,body {		margin:0; padding:0; width: 100%; height: 100%;		}
+		header { 	width: 100%; background: tan; height:60px; text-align: center }
+		header form{ padding: 15px; }
+		header form input { width: 250px; height:30px; padding:0 5px; }
+		div#content { margin-top:20px;	}
+		header form button {
+		    height: 33px;  padding: 0 5px;
+		    border: 2px solid #866FC0;  border-radius: 4px;
+		    background-color: #866FC0; color: white;
+		    box-shadow: 0px 2px 0px rgba(255,255,255,0.5) inset;
+		    font-family: Arial;
+		}
+	</style>
+	<script src="./js/jquery.min.js"></script>
+</head>
+	<body>
+		<header>
+			<form onsubmit="return false;">
+				<input type="text" id="logo_text" placeholder="Enter text..." />
+				<button onclick="handleSubmit()">Generate Logo</button>
+			</form>
+		</header>
+		<center> <div id="content"></div> </center>
+		
+		<script type="text/javascript">
+			function handleSubmit(){
+				$.post('./api', { 'logo_text': document.getElementById('logo_text').value }, function(data){
+					if(data !== null || data !== undefined ) {
+						$('#content').html(data);
+					}
+				});
+			}
+		</script>
+	</body>
+</html>
