@@ -7,7 +7,7 @@ var express = require('express'),
 	ctx = canvas.getContext('2d');
 
 // For IIS only, subdirectory slug
-var url_prefix = "/goglogo", port = process.env.PORT || 8080;
+var url_prefix = "", port = process.env.PORT || 8080;
 // Create Global variables for this project
 var colors = ['#4285F4','#EA4335','#FBBC05','#34A853'],
 	sampleFont = new Canvas.Font('ShivamKR', path.join(__dirname,'fonts','Bold.ttf')),
