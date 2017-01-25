@@ -10,9 +10,10 @@ var express = require('express'),
 var url_prefix = "", port = process.env.PORT || 8080;
 // Create Global variables for this project
 var colors = ['#4285F4','#EA4335','#FBBC05','#34A853'],
-	sampleFont = new Canvas.Font('ShivamKR', path.join(__dirname,'fonts','Bold.ttf')),
+	// sampleFont = new Canvas.Font('ShivamKR', path.join(__dirname,'fonts','Bold.ttf')),
 	fontSize = 80, lineHeight = 88;
-	ctx.addFont(sampleFont);	ctx.font = fontSize+"px ShivamKR";
+	// ctx.addFont(sampleFont);	
+	ctx.font = fontSize+"px Product Sans";
 //application configuration part
 app.use(bodyParser.urlencoded({ extended: false }));
 // PUBLIC URL
